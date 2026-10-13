@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyberpunk: Edgerunners — Archivo Oficial Night City</title>
+  <meta name="description" content="Expediente completo de Cyberpunk: Edgerunners. Historia de David Martinez y Lucy Kushinada, la banda de Maine, el mundo de Night City, galería visual y ficha de producción.">
+  <meta property="og:title" content="Cyberpunk: Edgerunners — Night City Archive">
+  <meta property="og:image" content="img/edgerunners_logo.png">
+  <link rel="icon" type="image/png" href="img/edgerunners_logo.png">
+
+  <!-- Preconnect audio CDN & font origins -->
+  <link rel="preconnect" href="https://archive.org" crossorigin>
+  <link rel="preconnect" href="https://ia801509.us.archive.org" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Saltar al contenido principal</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Fixed cosmic background -->
+  <div class="space-cosmos" id="spaceCosmos" aria-hidden="true">
+    <div class="starfield stars-layer-1" id="starsLayer1"></div>
+    <div class="starfield stars-layer-2" id="starsLayer2"></div>
+
+    <div class="cyber-moon-wrap" id="cyberMoonWrap">
+      <div class="moon-halo"></div>
+      <div class="moon-orbit-ring"></div>
+      <div class="cyber-moon" id="cyberMoon">
+        <div class="crater c1"></div>
+        <div class="crater c2"></div>
+        <div class="crater c3"></div>
+        <div class="crater c4"></div>
+        <div class="crater c5"></div>
+        <div class="crater c6"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Audio: preload="metadata" avoids blocking initial page load -->
+  <audio id="bgMusic" loop preload="metadata">
+    <source src="https://ia801509.us.archive.org/33/items/cyberpunk-albums/Cyberpunk%202077%20Radio%20Vol.%202%20Original%20Soundtrack/Cyberpunk%202077%20Radio%2C%20Vol.%202%20Original%20Soundtrack%20%5BMP3%5D/05.%20I%20Really%20Want%20to%20Stay%20at%20Your%20House.mp3" type="audio/mpeg">
+    <source src="https://archive.org/download/cyberpunk-albums/Cyberpunk%202077%20Radio%20Vol.%202%20Original%20Soundtrack/Cyberpunk%202077%20Radio%2C%20Vol.%202%20Original%20Soundtrack%20%5BMP3%5D/05.%20I%20Really%20Want%20to%20Stay%20at%20Your%20House.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="nav" id="mainNav">
+    <a class="brand-logo cyber-glitch-brand" href="#top" aria-label="Cyberpunk: Edgerunners Inicio">
+      <img src="img/edgerunners_logo.png" alt="Logo oficial Cyberpunk: Edgerunners" class="brand-logo-main" width="180" height="36">
+      <img src="img/edgerunners_logo.png" alt="" aria-hidden="true" class="brand-logo-glitch glitch-cyan" width="180" height="36">
+      <img src="img/edgerunners_logo.png" alt="" aria-hidden="true" class="brand-logo-glitch glitch-magenta" width="180" height="36">
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#historia" class="nav-link" data-section="historia" data-text="Historia">Historia</a>
+      <a href="#personajes" class="nav-link" data-section="personajes" data-text="Protagonistas">Protagonistas</a>
+      <a href="#mundo" class="nav-link" data-section="mundo" data-text="Night City">Night City</a>
+      <a href="#galeria" class="nav-link" data-section="galeria" data-text="Galería">Galería</a>
+      <a href="#datos" class="nav-link" data-section="datos" data-text="Producción">Producción</a>
+    </nav>
+
+    <div class="nav-controls">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar a colores claros" aria-pressed="false">
+        <span class="theme-icon" id="themeIcon" aria-hidden="true">☀</span>
+        <span class="theme-label" id="themeLabel">Modo Claro</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-backdrop" aria-hidden="true">
+        <img src="img/anniversary_duo.jpg" alt="" class="hero-bg-img" id="heroBgImg" width="1280" height="720" fetchpriority="high">
+        <div class="hero-bg-mask"></div>
+      </div>
+
+      <div class="hero-content" id="heroContent">
+        <div class="tag gs-hero-elem">
+          <span class="live-dot"></span> NIGHT CITY // ARCHIVO 2076 · STUDIO TRIGGER
+        </div>
+
+        <h1 class="hero-logo-wrap cyber-glitch-title gs-hero-elem" id="heroLogoWrap" aria-label="Cyberpunk: Edgerunners">
+          <img src="img/edgerunners_logo.png" alt="Cyberpunk: Edgerunners" class="hero-logo-img" id="heroLogo" width="580" height="145">
+          <img src="img/edgerunners_logo.png" alt="" aria-hidden="true" class="hero-logo-glitch glitch-cyan" width="580" height="145">
+          <img src="img/edgerunners_logo.png" alt="" aria-hidden="true" class="hero-logo-glitch glitch-magenta" width="580" height="145">
+          <span class="hero-glitch-scanline" aria-hidden="true"></span>
+        </h1>
+
+        <p class="subtitle cyber-glitch-sub gs-hero-elem" data-text="DAVID MARTINEZ &amp; LUCY KUSHINADA — «I REALLY WANT TO STAY AT YOUR HOUSE»">DAVID MARTINEZ &amp; LUCY KUSHINADA — «I REALLY WANT TO STAY AT YOUR HOUSE»</p>
+
+        <p class="lead gs-hero-elem">
+          En la megalópolis vertical donde cada sueño tiene un precio en cromo y sangre, un chico de Santo Domingo y una netrunner prófuga apostaron su humanidad por un único destino fuera de este mundo: la Luna.
+        </p>
+
+        <div class="cta gs-hero-elem">
+          <a class="btn primary" href="#galeria">Explorar galería</a>
+          <a class="btn tertiary" href="#historia">Leer expediente completo →</a>
+
+          <!-- Audio player widget -->
+          <div class="vmp-player" id="audioWidget" role="region" aria-label="Reproductor de música I Really Want to Stay at Your House">
+            <button type="button" class="vmp-collapse-btn" id="vmpCollapseBtn" aria-label="Contraer o expandir reproductor" aria-expanded="true" title="Contraer / Expandir reproductor">
+              <svg class="vmp-icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="14" height="14">
+                <line x1="6" y1="12" x2="18" y2="12"></line>
+              </svg>
+              <svg class="vmp-icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="14" height="14">
+                <line x1="12" y1="6" x2="12" y2="18"></line>
+                <line x1="6" y1="12" x2="18" y2="12"></line>
+              </svg>
+            </button>
+
+            <div class="vmp-avatar-wrap" id="vmpAvatarWrap">
+              <img src="img/lucy_player_hd.jpg" alt="Lucy — I Really Want to Stay at Your House" class="vmp-avatar-img" width="136" height="152">
+            </div>
+
+            <button type="button" class="vmp-eq-trigger" id="vmpEqBtn" aria-label="Alternar reproducción" title="Alternar reproducción">
+              <span class="vmp-eq" id="eqBars" aria-hidden="true">
+                <span class="vmp-eq-bar" style="--eq-delay: 0s; --eq-dur: 0.72s"></span>
+                <span class="vmp-eq-bar" style="--eq-delay: 0.18s; --eq-dur: 0.56s"></span>
+                <span class="vmp-eq-bar" style="--eq-delay: 0.08s; --eq-dur: 0.84s"></span>
+                <span class="vmp-eq-bar" style="--eq-delay: 0.26s; --eq-dur: 0.64s"></span>
+              </span>
+            </button>
+
+            <div class="vmp-collapsible" id="vmpCollapsible">
+              <div class="vmp-collapsible-inner">
+                <div class="vmp-meta">
+                  <span class="vmp-title">STAY AT YOUR HOUSE</span>
+                  <span class="vmp-artist">ROSA WALTON</span>
+                </div>
+
+                <div class="vmp-transport">
+                  <button type="button" class="vmp-icon-btn vmp-rewind-btn" id="vmpPrevBtn" aria-label="Regresar 10 segundos" title="Regresar 10 segundos (-10s)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+                      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                      <path d="M3 3v5h5"></path>
+                    </svg>
+                    <span class="vmp-rewind-lbl">-10s</span>
+                  </button>
+
+                  <button type="button" class="vmp-icon-btn vmp-play-main" id="vmpPlayBtn" aria-label="Reproducir o pausar canción" aria-pressed="false" title="Reproducir / Pausar">
+                    <svg class="vmp-icon-play" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                      <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                    </svg>
+                    <svg class="vmp-icon-pause" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                      <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                      <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="vmp-progress-track" id="vmpProgressTrack" role="slider" aria-label="Progreso de la canción" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+              <div class="vmp-progress-fill" id="vmpProgressFill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bar gs-hero-elem" id="heroBar">
+        <div class="stat-pill">
+          <span class="stat-val" data-counter="10">10</span>
+          <span class="stat-lbl">Episodios (OVA)</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-val">TRIGGER</span>
+          <span class="stat-lbl">Estudio de Animación</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-val" data-counter="2022">2022</span>
+          <span class="stat-lbl">Estreno Mundial</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-val" data-counter="2077">2077</span>
+          <span class="stat-lbl">Línea Temporal</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01. Historia -->
+    <section id="historia" class="section">
+      <div class="section-header gs-st-fade">
+        <span class="section-tag">01 // SINOPSIS ARGUMENTAL</span>
+        <h2 class="section-heading">Quemarse rápido para no apagarse nunca</h2>
+      </div>
+
+      <div class="story-grid">
+        <aside class="story-visual gs-st-left">
+          <div class="story-frame">
+            <img src="img/moon_iconic.jpg" alt="David y Lucy contemplando la Luna juntos" width="800" height="500" loading="lazy" decoding="async">
+            <div class="story-caption">
+              <span>BD SIMULATION // EPISODIO 02</span>
+              <strong>El sueño lunar compartido en la azotea de Night City</strong>
+            </div>
+          </div>
+          <blockquote class="badge-quote">
+            «En Night City no te recuerdan por cómo vives, sino por cómo mueres. Y aun así, ella solo quería que él viviera.»
+          </blockquote>
+        </aside>
+
+        <div class="prose gs-st-right">
+          <p class="story-p lead-paragraph">
+            <strong>David Martinez</strong> crece en las calles de Santo Domingo mientras su madre, Gloria, trabaja turnos extenuantes como paramédica para pagarle la matrícula en la prestigiosa Academia Arasaka. Cuando un tiroteo entre bandas les arrebata todo y el sistema sanitario corporativo les da la espalda, David toma una decisión irreversible.
+          </p>
+          <p class="story-p">
+            Con la ayuda del matasanos Doc, se implanta en la columna vertebral un <strong>Sandevistan</strong> de grado militar experimental que Gloria había ocultado: una prótesis neural capaz de acelerar sus reflejos hasta congelar el tiempo a su alrededor, a cambio de devorar progresivamente su sistema nervioso central.
+          </p>
+          <p class="story-p">
+            En un vagón del monorraíl NCART conoce a <strong>Lucy</strong>, una sigilosa netrunner que lo introduce en la cuadrilla de mercenarios liderada por Maine, junto a Dorio, Kiwi, Pilar y Rebecca. Lejos de buscar la gloria de las leyendas del Afterlife, David descubre que su verdadera misión es proteger el sueño de Lucy: escapar de la sombra de Arasaka hacia las colonias orbitales de la Luna.
+          </p>
+          <p class="story-p">
+            Sin embargo, las corporaciones <strong>Arasaka</strong> y <strong>Militech</strong> siguen de cerca la extraordinaria tolerancia de David al cromo, tendiendo una trampa con el prototipo del <em>Ciberesqueleto</em> que desencadenará un enfrentamiento final contra la leyenda viviente de seguridad corporativa: <strong>Adam Smasher</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. Protagonistas -->
+    <section id="personajes" class="section">
+      <div class="section-header gs-st-fade">
+        <span class="section-tag">02 // EXPEDIENTES DE LOS PROTAGONISTAS</span>
+        <h2 class="section-heading">Dos almas frente a la megacorporación</h2>
+      </div>
+
+      <div class="protas-container">
+        <article class="prota-card gs-prota-card" data-spotlight>
+          <div class="prota-media">
+            <img src="img/david_poster.png" alt="David Martinez con la chaqueta amarilla de su madre" width="640" height="440" loading="lazy" decoding="async" class="prota-img">
+            <span class="prota-badge">SANDEVISTAN MK.IV // CYBERSKELETON</span>
+          </div>
+          <div class="prota-info">
+            <div class="prota-meta">ID: NC-02076-DM · SANTO DOMINGO</div>
+            <h3>David Martinez</h3>
+            <p>
+              Su afinidad neurobiológica sin precedentes le permitió resistir cargas de implantes que habrían inducido ciberpsicosis fulminante en cualquier otro mercenario. Tras la caída de Maine, asumió el liderazgo del grupo manteniendo viva la promesa hecha a Lucy bajo el cielo simulado de la Luna.
+            </p>
+            <dl class="spec-grid">
+              <div>
+                <dt>Rol Táctico</dt>
+                <dd>Solo / Vanguardia de asalto</dd>
+              </div>
+              <div>
+                <dt>Implante Clave</dt>
+                <dd>Zetatech Sandevistan Militar</dd>
+              </div>
+              <div>
+                <dt>Emblema</dt>
+                <dd>Chaqueta EMT de Gloria</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="prota-card gs-prota-card" data-spotlight>
+          <div class="prota-media">
+            <img src="img/lucy_poster.png" alt="Lucyna Kushinada rodeada de código y luces de neón" width="640" height="440" loading="lazy" decoding="async" class="prota-img">
+            <span class="prota-badge">DEEP NETRUNNER // MONOWIRE</span>
+          </div>
+          <div class="prota-info">
+            <div class="prota-meta">ID: ARSK-0019-LK · JAPANTOWN</div>
+            <h3>Lucyna Kushinada</h3>
+            <p>
+              Entrenada desde niña en instalaciones clandestinas de Arasaka para infiltrarse más allá del Muro Negro en la Vieja Red. Tras ser la única superviviente de la huida de su escuadrón infantil, vivió ocultándose en Night City hasta que la calidez de David transformó su miedo en determinación.
+            </p>
+            <dl class="spec-grid">
+              <div>
+                <dt>Rol Táctico</dt>
+                <dd>Netrunner de Infiltración Profunda</dd>
+              </div>
+              <div>
+                <dt>Armamento</dt>
+                <dd>Monocordio térmico y Quickhacks</dd>
+              </div>
+              <div>
+                <dt>Horizonte</dt>
+                <dd>Mar de la Tranquilidad, Luna</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03. Night City Lore -->
+    <section id="mundo" class="section">
+      <div class="section-header gs-st-fade">
+        <span class="section-tag">03 // ANATOMÍA DE NIGHT CITY</span>
+        <h2 class="section-heading">La banda, los implantes y el precio de la leyenda</h2>
+      </div>
+
+      <div class="lore-bento">
+        <article class="lore-card wide gs-lore-card" data-spotlight>
+          <span class="lore-index">EXPEDIENTE A // LA CUADRILLA</span>
+          <h3>La banda de Maine y los mercenarios del Afterlife</h3>
+          <p>
+            Antes de que David se convirtiera en uno de los nombres más respetados de Night City, fue acogido por el veterano <strong>Maine</strong> y su segunda al mando, <strong>Dorio</strong>. La cuadrilla operaba bajo los encargos del fixer <strong>Faraday</strong> e incluía a la experimentada netrunner <strong>Kiwi</strong>, al excéntrico techie <strong>Pilar</strong> y a su hermana <strong>Rebecca</strong>, quien permaneció leal a David hasta el último disparo en la Torre Arasaka.
+          </p>
+          <div class="crew-tags">
+            <span>Maine · Líder</span>
+            <span>Dorio · Segunda al mando</span>
+            <span>Rebecca · Artillera</span>
+            <span>Kiwi · Netrunner</span>
+            <span>Pilar · Techie</span>
+            <span>Falco · Conductor</span>
+          </div>
+        </article>
+
+        <article class="lore-card gs-lore-card" data-spotlight>
+          <span class="lore-index">EXPEDIENTE B // PATOLOGÍA</span>
+          <h3>La Ciberpsicosis y los inmunodepresores</h3>
+          <p>
+            Sustituir tejido orgánico por cromo militar erosiona la empatía y la percepción de la realidad. Cuando la carga neuronal supera el límite humano, el portador sufre disociación violenta y alucinaciones, atrayendo a los escuadrones de exterminio de <strong>MaxTac</strong>.
+          </p>
+        </article>
+
+        <article class="lore-card gs-lore-card" data-spotlight>
+          <span class="lore-index">EXPEDIENTE C // CORPORACIONES</span>
+          <h3>El Muro Negro y el secreto de Arasaka</h3>
+          <p>
+            Más allá del ciberespacio seguro habita la Vieja Red, plagada de inteligencias artificiales letales liberadas durante el Colapso. Arasaka utilizaba niños huérfanos como Lucy para recuperar datos perdidos antes de que el miedo de Lucy a que capturaran a David sellara el destino de ambos.
+          </p>
+        </article>
+
+        <article class="lore-card wide gs-lore-card" data-spotlight>
+          <span class="lore-index">EXPEDIENTE D // SONIDO &amp; IMPACTO</span>
+          <h3>El eco de «I Really Want to Stay at Your House»</h3>
+          <p>
+            La combinación de la partitura industrial de <strong>Akira Yamaoka</strong> (compositor de <em>Silent Hill</em>) con el tema synth-pop de <strong>Rosa Walton</strong> convirtió las escenas de la Luna en un fenómeno cultural. En el propio videojuego <em>Cyberpunk 2077</em> se incorporó la chaqueta de David, la escopeta <em>Guts</em> de Rebecca y el cóctel «David Martinez» en la barra del Afterlife.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04. Galería 3D -->
+    <section id="galeria" class="section">
+      <div class="gal-header">
+        <div class="gs-st-fade">
+          <span class="section-tag">04 // ARCHIVO VISUAL OFICIAL</span>
+          <h2 class="section-heading">Galería de David &amp; Lucy</h2>
+        </div>
+
+        <div class="gal-controls-wrap gs-st-fade">
+          <div class="filter-bar" role="tablist" aria-label="Filtrar galería">
+            <button type="button" role="tab" class="filter-btn active" data-filter="all">Todos (18)</button>
+            <button type="button" role="tab" class="filter-btn" data-filter="duo">David &amp; Lucy</button>
+            <button type="button" role="tab" class="filter-btn" data-filter="david">David</button>
+            <button type="button" role="tab" class="filter-btn" data-filter="lucy">Lucy</button>
+          </div>
+
+          <div class="cylinder-tools" aria-label="Controles del carrusel 3D">
+            <button type="button" class="cyl-tool-btn" id="cylPauseBtn" aria-pressed="false" title="Pausar o reanudar rotación 3D">
+              <span class="cyl-dot" aria-hidden="true"></span>
+              <span id="cylPauseLabel">Giro 360°: Activo</span>
+            </button>
+            <button type="button" class="cyl-tool-btn" id="cylViewToggle" aria-pressed="false" title="Alternar entre Cilindro 3D y Mosaico">
+              <span id="cylViewLabel">Vista Mosaico</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cylinder-chamber gs-st-fade" id="cylinderChamber">
+        <div class="cylinder-hud-top" aria-hidden="true">
+          <span>BD // CYLINDER-CAROUSEL 3D</span>
+          <span class="cylinder-hud-status" id="cylinderHudStatus">ROTACIÓN CONTINUA 360° · PRESIONA CUALQUIER IMAGEN PARA ABRIR</span>
+          <span>PERSPECTIVE: 35EM // 18 ARCHIVOS OFICIALES</span>
+        </div>
+
+        <div class="cylinder-viewport" id="cylinderViewport">
+          <div
+            class="cylinder-carousel"
+            id="gallery"
+            style="--n: 18; --w: 225px; --ba: calc(1turn / var(--n)); --anim-dur: 40s;"
+          >
+            <button type="button" class="gal-item" style="--i: 0;" aria-haspopup="dialog" aria-label="Abrir en visor: La Promesa en la Luna" data-cat="duo" data-src="img/moon_iconic.jpg" data-title="La Promesa en la Luna" data-desc="Escena icónica del episodio 2 donde Lucy comparte con David su sueño lunar mediante una neurodanza (BD).">
+              <img src="img/moon_iconic.jpg" alt="David y Lucy mirando la Luna en simulación BD" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">EPISODIO 02 · ESCENA CLAVE</span>
+                <h4>La Promesa en la Luna</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 1;" aria-haspopup="dialog" aria-label="Abrir en visor: David Martinez — Póster Oficial" data-cat="david" data-src="img/david_poster.png" data-title="David Martinez — Póster Oficial" data-desc="Arte promocional oficial de Studio Trigger: David portando la chaqueta amarilla de paramédico.">
+              <img src="img/david_poster.png" alt="Póster oficial de David Martinez" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">ARTE OFICIAL · DAVID</span>
+                <h4>El Chico de Santo Domingo</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 2;" aria-haspopup="dialog" aria-label="Abrir en visor: Lucyna Kushinada — Póster Oficial" data-cat="lucy" data-src="img/lucy_poster.png" data-title="Lucyna Kushinada — Póster Oficial" data-desc="Retrato oficial de Lucy diseñado por Yoh Yoshinari para el lanzamiento mundial de la serie.">
+              <img src="img/lucy_poster.png" alt="Póster oficial de Lucy Kushinada" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">ARTE OFICIAL · LUCY</span>
+                <h4>Netrunner del Muro Negro</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 3;" aria-haspopup="dialog" aria-label="Abrir en visor: Arte Oficial Edición Blu-Ray" data-cat="duo" data-src="img/cover_hero.jpg" data-title="Arte Oficial Edición Blu-Ray" data-desc="Ilustración oficial de Studio Trigger con Lucy abrazando a David frente al disco lunar.">
+              <img src="img/cover_hero.jpg" alt="Arte oficial Blu-Ray de David y Lucy frente a la Luna" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">STUDIO TRIGGER · KEY VISUAL</span>
+                <h4>El Último Abrazo</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 4;" aria-haspopup="dialog" aria-label="Abrir en visor: Ilustración Especial de Aniversario" data-cat="duo" data-src="img/anniversary_duo.jpg" data-title="Ilustración Especial de Aniversario" data-desc="Ilustración oficial de Studio Trigger y CD Projekt Red en conmemoración del éxito global de Edgerunners.">
+              <img src="img/anniversary_duo.jpg" alt="Ilustración de aniversario de David y Lucy" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">TRIGGER × CDPR · ILUSTRACIÓN</span>
+                <h4>Conmemoración Oficial</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 5;" aria-haspopup="dialog" aria-label="Abrir en visor: Vuelo Nocturno sobre Night City" data-cat="duo" data-src="img/lucy_teaser.jpg" data-title="Vuelo Nocturno sobre Night City" data-desc="Fotograma oficial de David y Lucy saltando tomados de la mano frente a los paneles luminosos de la megaciudad.">
+              <img src="img/lucy_teaser.jpg" alt="David y Lucy saltando frente a un cartel luminoso amarillo" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">FOTOGRAMA OFICIAL · DÚO</span>
+                <h4>Vuelo sobre Night City</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 6;" aria-haspopup="dialog" aria-label="Abrir en visor: Encuentro en el Monorraíl NCART" data-cat="lucy" data-src="img/lucy_train.jpg" data-title="Encuentro en el Monorraíl NCART" data-desc="El instante en que Lucy intercepta a David mientras sustrae fragmentos de datos en el tren.">
+              <img src="img/lucy_train.jpg" alt="Lucy en el vagón del tren NCART" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">EPISODIO 01 · FOTOGRAMA</span>
+                <h4>Encuentro en el NCART</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 7;" aria-haspopup="dialog" aria-label="Abrir en visor: Despliegue del Sandevistan" data-cat="david" data-src="img/david_screencap.png" data-title="Despliegue del Sandevistan" data-desc="Estela cromática característica producida al activar la dilatación temporal del implante.">
+              <img src="img/david_screencap.png" alt="David activando el Sandevistan" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">SECUENCIA DE ACCIÓN · DAVID</span>
+                <h4>Frecuencia Sandevistan</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 8;" aria-haspopup="dialog" aria-label="Abrir en visor: El Reflejo en el Visor Lunar" data-cat="duo" data-src="img/moon_scene3.jpg" data-title="El Reflejo en el Visor Lunar" data-desc="Fotograma oficial del episodio final: Lucy contempla el recuerdo de David reflejado en su casco espacial.">
+              <img src="img/moon_scene3.jpg" alt="Reflejo de David en el casco espacial de Lucy en la Luna" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">EPISODIO 10 · CLÍMAX</span>
+                <h4>Recuerdo en el Sol Lunar</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 9;" aria-haspopup="dialog" aria-label="Abrir en visor: Euforia Nocturna en la Ciudad" data-cat="lucy" data-src="img/lucy_render.png" data-title="Euforia Nocturna en la Ciudad" data-desc="Fotograma oficial de Lucy riendo mientras recorre las calles iluminadas por neón junto a David.">
+              <img src="img/lucy_render.png" alt="Lucy riendo bajo las luces de neón de Night City" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">EPISODIO 02 · LUCY</span>
+                <h4>Euforia bajo el Neón</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 10;" aria-haspopup="dialog" aria-label="Abrir en visor: Bajo la Gravedad Lunar" data-cat="duo" data-src="img/moon_scene2.jpg" data-title="Bajo la Gravedad Lunar" data-desc="David y Lucy sentados sobre el regolito lunar lejos de las sirenas y corporaciones de la Tierra.">
+              <img src="img/moon_scene2.jpg" alt="David y Lucy sentados en la superficie lunar" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">SIMULACIÓN BD · PANORAMA</span>
+                <h4>Silencio en el Espacio</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 11;" aria-haspopup="dialog" aria-label="Abrir en visor: David — La Última Sonrisa" data-cat="david" data-src="img/david_moon_man.png" data-title="David — La Última Sonrisa" data-desc="Fotograma clave del recuerdo luminoso de David bajo el sol lunar.">
+              <img src="img/david_moon_man.png" alt="David sonriendo en la superficie lunar" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">EPISODIO 10 · MEMORIA</span>
+                <h4>My Moon, My Man</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 12;" aria-haspopup="dialog" aria-label="Abrir en visor: Lucy — Colección Oficial CDPR" data-cat="lucy" data-src="img/lucy_goodies.jpg" data-title="Lucy — Colección Oficial CDPR" data-desc="Ilustración de estudio perteneciente al archivo de arte conceptual de CD Projekt Red.">
+              <img src="img/lucy_goodies.jpg" alt="Arte conceptual de Lucy por CDPR" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">ARTE CONCEPTUAL · LUCY</span>
+                <h4>Archivo de Colección</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 13;" aria-haspopup="dialog" aria-label="Abrir en visor: Travesía en el Rover Lunar" data-cat="duo" data-src="img/lucy_moon.jpg" data-title="Travesía en el Rover Lunar" data-desc="Fotograma oficial de David y Lucy recorriendo los cráteres de la Luna durante su neurodanza.">
+              <img src="img/lucy_moon.jpg" alt="David y Lucy conduciendo un rover en la Luna" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">EPISODIO 02 · NEURODANZA</span>
+                <h4>Travesía en el Rover</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 14;" aria-haspopup="dialog" aria-label="Abrir en visor: Sistema de Lanzamiento de Proyectiles" data-cat="david" data-src="img/david_teaser.jpg" data-title="Sistema de Lanzamiento de Proyectiles" data-desc="Fotograma oficial de David desplegando el cañón cibernético heredado de Maine.">
+              <img src="img/david_teaser.jpg" alt="David apuntando su cañón cibernético" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">COMBATE · DAVID</span>
+                <h4>Cromo de Grado Militar</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 15;" aria-haspopup="dialog" aria-label="Abrir en visor: Lucyna Kushinada — Primer Plano" data-cat="lucy" data-src="img/lucy_profile.png" data-title="Lucyna Kushinada — Primer Plano" data-desc="Fotograma original de Studio Trigger mostrando el diseño de ojos y maquillaje neón de Lucy.">
+              <img src="img/lucy_profile.png" alt="Primer plano oficial de Lucy Kushinada" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">STUDIO TRIGGER · LUCY</span>
+                <h4>Mirada de Netrunner</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 16;" aria-haspopup="dialog" aria-label="Abrir en visor: El Entrenamiento con Maine" data-cat="david" data-src="img/david_trailer.jpg" data-title="El Entrenamiento con Maine" data-desc="Fotograma oficial de David dando sus primeros pasos en la banda de mercenarios de Maine.">
+              <img src="img/david_trailer.jpg" alt="David y Maine en secuencia oficial del anime" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">LA CUADRILLA · DAVID</span>
+                <h4>El Legado de Maine</h4>
+              </div>
+            </button>
+
+            <button type="button" class="gal-item" style="--i: 17;" aria-haspopup="dialog" aria-label="Abrir en visor: Prótesis Neural Sandevistan" data-cat="david" data-src="img/david_sandevistan.jpg" data-title="Prótesis Neural Sandevistan" data-desc="Fotograma oficial del implante espinal experimental en la clínica de Doc.">
+              <img src="img/david_sandevistan.jpg" alt="Implante militar Sandevistan en la clínica de Doc" width="450" height="640" loading="lazy" decoding="async">
+              <div class="gal-overlay">
+                <span class="gal-tag">TECNOLOGÍA · CYBERWARE</span>
+                <h4>Núcleo Sandevistan</h4>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="cylinder-hud-bottom" aria-hidden="true">
+          <span>PRESIONA CUALQUIER IMAGEN PARA ABRIRLA EN PANTALLA COMPLETA</span>
+          <span>ARRASTRA HORIZONTALMENTE PARA GIRAR EL CILINDRO</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. Ficha técnica -->
+    <section id="datos" class="section">
+      <div class="section-header gs-st-fade">
+        <span class="section-tag">05 // CRÉDITOS &amp; ESPECIFICACIONES</span>
+        <h2 class="section-heading">Ficha técnica de la obra</h2>
+      </div>
+
+      <div class="data-table" id="dataTable">
+        <div class="data-row">
+          <span class="data-k">Título Original</span>
+          <span class="data-v">Cyberpunk: Edgerunners (サイバーパンク エッジランナーズ)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-k">Dirección General</span>
+          <span class="data-v">Hiroyuki Imaishi (今石 洋之)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-k">Diseño de Personajes</span>
+          <span class="data-v">Yoh Yoshinari (吉成 曜)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-k">Guion y Producción</span>
+          <span class="data-v">Masahiko Otsuka &amp; Yoshiki Usa (Studio Trigger) / Bartosz Sztybor (CDPR)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-k">Música Original</span>
+          <span class="data-v">Akira Yamaoka (山岡 晃) · Tema: «I Really Want to Stay at Your House» (Rosa Walton)</span>
+        </div>
+        <div class="data-row">
+          <span class="data-k">Reconocimiento</span>
+          <span class="data-v">Anime del Año — Crunchyroll Anime Awards 2023</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-wrap">
+      <a href="#top" class="footer-logo-link" aria-label="Volver arriba">
+        <img src="img/edgerunners_logo.png" alt="Cyberpunk: Edgerunners" class="footer-logo-img" width="216" height="54" loading="lazy" decoding="async">
+      </a>
+      <p class="footer-copy">
+        Archivo de tributo sin fines comerciales. <strong>Cyberpunk: Edgerunners</strong> y todos sus personajes son propiedad intelectual de <strong>CD Projekt Red</strong>, <strong>Studio Trigger</strong> y <strong>Netflix</strong>.
+      </p>
+      <div class="footer-links">
+        <a href="#top">↑ Volver al inicio</a>
+        <span>·</span>
+        <a href="#galeria">Galería</a>
+        <span>·</span>
+        <a href="revolucion-mexicana/index.html">Ver Proyecto: Revolución Mexicana</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox modal -->
+  <dialog class="lightbox" id="lightbox" aria-label="Visor de imagen">
+    <span class="lb-counter" id="lb-counter" aria-live="polite">1 / 18</span>
+    <button type="button" class="lb-close" aria-label="Cerrar visor">✕</button>
+    <button type="button" class="lb-nav prev" aria-label="Imagen anterior">‹</button>
+    <figure class="lb-figure">
+      <div class="lb-img-wrap">
+        <img id="lb-img" src="" alt="" width="1280" height="720">
+      </div>
+      <figcaption class="lb-caption">
+        <h3 id="lb-title"></h3>
+        <p id="lb-desc"></p>
+      </figcaption>
+    </figure>
+    <button type="button" class="lb-nav next" aria-label="Imagen siguiente">›</button>
+  </dialog>
+
+  <script src="js/gsap.min.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
+  <script src="js/Flip.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
