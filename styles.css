@@ -22,7 +22,7 @@
   --z-progress: 200;
   --z-modal: 500;
 
-  --font-display: "Syne", system-ui, -apple-system, sans-serif;
+  --font-display: "Chakra Petch", system-ui, -apple-system, sans-serif;
   --font-sans: "Space Grotesk", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
@@ -1299,9 +1299,10 @@ button {
 .section-heading {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4.8vw, 3.6rem);
-  font-weight: 800;
+  font-weight: 700;
+  font-style: italic;
   line-height: 1.08;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   color: var(--text);
   text-wrap: balance;
   transition: text-shadow 220ms var(--ease-snappy);
@@ -1494,8 +1495,9 @@ button {
 .prota-info h3 {
   font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.01em;
   color: var(--text);
   margin-bottom: 14px;
 }
@@ -1564,9 +1566,10 @@ button {
 .lore-card h3 {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-  font-weight: 800;
+  font-weight: 700;
+  font-style: italic;
   color: var(--text);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .lore-card p {
@@ -2086,6 +2089,8 @@ button {
 .lb-caption h3 {
   font-family: var(--font-display);
   font-size: 1.35rem;
+  font-weight: 700;
+  font-style: italic;
   color: var(--accent-text);
   margin-bottom: 6px;
 }
